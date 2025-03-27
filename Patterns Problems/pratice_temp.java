@@ -51,19 +51,54 @@ public class pratice_temp {
 
         // 0-1 triangle
 
-        boolean c = true;
+      
         for (int i = 0; i < 5; i++) {
+           
             for (int j = 0; j <= i; j++) {
-                if (c == true) {
+                if ((i+j) %2==0) {
                     System.out.print(1);
-                    c = !c;
+                    
                 }
-                 else if (c == false) {
+                 else if ( (i + j) % 2 != 0) {
                     System.out.print(0);
-                    c = !c;
+                    
                 }
                 
 
+            }
+            System.out.println();
+            
+        }
+
+
+        // Butterfly pattern 
+
+        // first half
+        int k = 10;
+        for (int i = 1; i < k ; i++) {
+            for(int j = 1;j<= i;j++){
+                System.out.print("*");
+            }
+            for (int j = 1; j <= 2*(k-i); j++) {
+                System.out.print(" ");
+            }
+            for(int j = 1;j<= i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Seconf Half
+
+        for (int i = k; i >= 0; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= 2 * (k - i); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
