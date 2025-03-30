@@ -1,28 +1,22 @@
 public class stockprices {
 
-    public static void Stockprices(int arr[]) {
-        int minidx = 0;
-        int minprice = arr[0];
-        int maxprice = 0;
-        int maxidx = 0;
+    public static int Stockprices(int arr[]) {
+        int buyprice = Integer.MAX_VALUE;
+        int maxProfit = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            if (minprice > arr[i]) {
-                minprice = arr[i];
-                minidx = i;
+            if(buyprice < arr[i]){
+                int profit = arr[i] - buyprice;
+                maxProfit = Math.max(maxProfit, profit);
+            }else{
+                buyprice = arr[i];
             }
         }
-        for (int i = minidx; i < arr.length; i++) {
-            if(maxprice < arr[i]){
-                maxprice = arr[i];
-                maxidx = i;
-            }
-        }
-       System.out.println("To get highest profit buy on day " + minidx + " and sell on day " + maxidx + " to get profit of " + (maxprice-minprice) +" per share ");
+       return maxProfit;
     }
 
     public static void main(String[] args) {
-        int price[] = { 7,1,5,3,6,4};
-        Stockprices(price);
+        int price[] = { 2,12,1,3,6,4};
+        System.out.println(Stockprices(price));
     }
 }
