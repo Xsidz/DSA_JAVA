@@ -28,7 +28,7 @@ public class TrappingWater {
         
     }
     public static void main(String[] args) {
-         int arr[] ={ 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+         int arr[] ={ 1, 8, 6, 2, 5, 4, 8, 3, 7};
          trapwater(arr);
     }
 }
